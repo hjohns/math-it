@@ -27,12 +27,20 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
-      - name: Install dependencies
+      - name: Clean & install dependencies
         run: |
+          rm -rf node_modules pnpm-lock.yaml
           pnpm install
-          pnpm rebuild    # <-- Ensures native bindings like oxc-parser work
+
+      - name: Install native Linux binding for oxc-parser
+        run: pnpm add -D @oxc-parser/binding-linux-x64-gnu
+
+      - name: Reinstall after adding native binding
+        run: |
+          rm -rf node_modules pnpm-lock.yaml
+          pnpm install
 
       - name: Build with Nuxt
         run: |
