@@ -23,7 +23,7 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -32,10 +32,12 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install
-          pnpm build
+          pnpm rebuild    # <-- Ensures native bindings like oxc-parser work
 
       - name: Build with Nuxt
-        run: pnpm generate
+        run: |
+          pnpm build
+          pnpm generate
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -54,4 +56,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 
+        uses: actions/deploy-pages@v4
