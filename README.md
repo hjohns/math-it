@@ -1,6 +1,25 @@
-# Nuxt UI Starter
+# Math It - Countdown Game
 
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more.
+A fun and challenging countdown game built with Nuxt 3 and Nuxt UI. Test your mathematical skills by using the given numbers and operations to reach the target number!
+
+## About the Game
+
+The countdown game presents you with:
+- A target number to reach
+- Six random numbers to work with
+- Basic mathematical operations (+, -, ×, ÷)
+
+Your goal is to use the available numbers and operations to calculate the target number. You can use each number only once, and you must use at least two numbers in your calculation.
+
+## Features
+
+- 🎯 Dynamic target numbers and random number sets
+- 🧮 Real-time calculation validation
+- 🏆 Score tracking and feedback
+- 🎨 Clean, modern UI built with Nuxt UI
+- 📱 Responsive design for all devices
+
+Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more about the technology stack.
 
 ## Setup
 
