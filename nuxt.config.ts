@@ -13,6 +13,10 @@ export default defineNuxtConfig({
 
   // GitHub Pages configuration
   ssr: false,
+  app: {
+    baseURL: '/math-it/',
+    buildAssetsDir: '/math-it/_nuxt/'
+  },
   nitro: {
     prerender: {
       routes: ['/']
