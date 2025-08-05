@@ -170,40 +170,41 @@
             </div>
           </div>
 
-          <!-- Operators -->
+          <!-- Operators and Brackets -->
           <div class="space-y-3">
             <div>
-              <h4 class="text-sm font-medium mb-2">Operators</h4>
-              <div class="flex gap-2">
-                <UButton
-                  v-for="op in operators"
-                  :key="op"
-                  variant="outline"
-                  :disabled="!canAddOperator"
-                  @click="addOperatorToEquation(op)"
-                >
-                  {{ op }}
-                </UButton>
-              </div>
-            </div>
-
-            <div>
-              <h4 class="text-sm font-medium mb-2">Brackets</h4>
-              <div class="flex gap-2">
-                <UButton
-                  variant="outline"
-                  :disabled="!canAddOpenBracket"
-                  @click="addOperatorToEquation('(')"
-                >
-                  (
-                </UButton>
-                <UButton
-                  variant="outline"
-                  :disabled="!canAddCloseBracket"
-                  @click="addOperatorToEquation(')')"
-                >
-                  )
-                </UButton>
+              <h4 class="text-sm font-medium mb-2">Operators & Brackets</h4>
+              <div class="flex justify-between items-center">
+                <div class="flex gap-2">
+                  <UButton
+                    v-for="op in operators"
+                    :key="op"
+                    variant="outline"
+                    :disabled="!canAddOperator"
+                    @click="addOperatorToEquation(op)"
+                    class="text-white text-xl font-bold min-w-[60px] h-12 bg-gray-700 hover:bg-gray-600 border-gray-600 flex items-center justify-center"
+                  >
+                    {{ op }}
+                  </UButton>
+                </div>
+                <div class="flex gap-2">
+                  <UButton
+                    variant="outline"
+                    :disabled="!canAddOpenBracket"
+                    @click="addOperatorToEquation('(')"
+                    class="text-white text-xl font-bold min-w-[60px] h-12 bg-gray-700 hover:bg-gray-600 border-gray-600 flex items-center justify-center"
+                  >
+                    (
+                  </UButton>
+                  <UButton
+                    variant="outline"
+                    :disabled="!canAddCloseBracket"
+                    @click="addOperatorToEquation(')')"
+                    class="text-white text-xl font-bold min-w-[60px] h-12 bg-gray-700 hover:bg-gray-600 border-gray-600 flex items-center justify-center"
+                  >
+                    )
+                  </UButton>
+                </div>
               </div>
             </div>
           </div>
