@@ -95,6 +95,10 @@
             </div>
           </div>
           
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            ✓ Valid target numbers found for this combination
+          </div>
+          
           <UButton 
             @click="startGame" 
             color="primary" 
@@ -308,6 +312,9 @@
 <script setup lang="ts">
 type GamePhase = 'setup' | 'playing' | 'results'
 
+// Import the countdown composable
+const { generateValidTarget } = useCountdown()
+
 // Game state
 const gamePhase = ref<GamePhase>('setup')
 const selectedLargeCount = ref<number>(0)
@@ -407,8 +414,8 @@ const drawNumbers = async () => {
 }
 
 const startGame = () => {
-  // Generate target number
-  targetNumber.value = Math.floor(Math.random() * 900) + 100
+  // Generate a valid target number that can be reached with the drawn numbers
+  targetNumber.value = generateValidTarget(drawnNumbers.value)
   
   // Use the drawn numbers
   availableNumbers.value = [...drawnNumbers.value]

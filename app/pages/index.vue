@@ -5,14 +5,21 @@
     </h1>
     
     <p class="text-lg text-gray-600 dark:text-gray-400 text-center max-w-md">
-      A fun and challenging countdown game to test your mathematical skills
+      A collection of fun and challenging math and logic games.
     </p>
 
     <div class="flex items-center gap-4">
       <UButton
-        label="Play Game"
+        label="Play Countdown"
         icon="i-lucide-play"
         to="/countdown"
+        size="lg"
+        color="primary"
+      />
+      <UButton
+        label="Play Sudoku"
+        icon="i-lucide-play"
+        to="/sudoku"
         size="lg"
         color="primary"
       />
